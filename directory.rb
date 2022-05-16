@@ -23,9 +23,11 @@ def print_header
 end
 
 def print(names)
-  names.each do |student|
-    if student[:name].length < 12
+  accum = 0
+  until accum == names.length
+    names.each do |student|
       puts "#{student[:name]} (#{student[:cohort]} cohort)"
+      accum += 1
     end
   end
 end
