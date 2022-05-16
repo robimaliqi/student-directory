@@ -8,7 +8,7 @@ def input_students
   # while the name is not empty, repeat this code
   while !name.empty? do
     # add the student hash to the array
-    students << {name: name, cohort: :november}
+    students << {name: name, cohort: :november, hobbies: :learning, country_of_birth: :United_kingdom, height: :tall}
     puts "Now we have #{students.count} students"
     # get another name from the user 
     name = gets.chomp
@@ -23,12 +23,8 @@ def print_header
 end
 
 def print(names)
-  accum = 0
-  until accum == names.length
-    names.each do |student|
-      puts "#{student[:name]} (#{student[:cohort]} cohort)"
-      accum += 1
-    end
+  names.each do |student|
+    puts "#{student[:name]} (#{student[:cohort]} cohort and hobbies include #{student[:hobbies]}, country of birth is: #{student[:country_of_birth]} also their height is: #{student[:height]})"
   end
 end
 
