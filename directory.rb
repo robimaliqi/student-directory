@@ -24,7 +24,7 @@ end
 
 def print(names)
   names.each do |student|
-    if student[:name].downcase.start_with?("r")
+    if student[:name].length < 12
       puts "#{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
