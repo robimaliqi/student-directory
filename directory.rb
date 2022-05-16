@@ -23,8 +23,10 @@ def print_header
 end
 
 def print(names)
-  names.each_with_index do |student|
-    puts "#{index + 1} #{student[:name]} (#{student[:cohort]} cohort)"
+  names.each do |student|
+    if student[:name].downcase.start_with?("r")
+      puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    end
   end
 end
 
